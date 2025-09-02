@@ -30,6 +30,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onAuthSuc
       if (error) {
         setError(error.message);
       } else {
+        // Reset form
+        setEmail('');
+        setPassword('');
+        setError('');
         onAuthSuccess();
         onClose();
       }

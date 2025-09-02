@@ -13,6 +13,9 @@ export const signUp = async (email: string, password: string) => {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
+    options: {
+      emailRedirectTo: undefined, // Disable email confirmation
+    }
   });
   return { data, error };
 };
